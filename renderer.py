@@ -1,6 +1,5 @@
 import os
 import sys
-import threading
 import numpy as np
 from colorist import BgColorRGB
 from vectors import *
@@ -20,31 +19,19 @@ def render_ascii(image:str):
     sys.stdout.write(image)
     sys.stdout.flush()
 
-def draw_row(shader:callable, output, y:int):
+def draw_row(shader:callable, y:int) -> str:
     y_coord = float(y / height)
     x_coords = np.linspace(0, 1, width)
     colors = np.array([convert_to_ascii_color(shader(vec2(x, y_coord))) for x in x_coords])  # Apply shader to all x-coordinates
     row_output = ""
     for col in colors:
         row_output += f"{col}  {col.OFF}"
-    output[y] = row_output
+    return row_output
 
 def draw_with_shader(shader:callable):
-    lines = [""] * height
     output:str = ""
 
-    threads = []
-
-    i = 0
-    while i < height:
-        threads.append(threading.Thread(target=draw_row, args=(shader, lines, i)))
-        threads[-1].start()
-        i += 1
-
-    i = 0
-    while i < height:
-        output += lines[i] + '\n'
-        threads[i].join()
-        i += 1
+    for i in range(height):
+        output += draw_row(shader, i) + '\n'
 
     return output
