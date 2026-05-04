@@ -1,5 +1,3 @@
-from vectors import *
-from textures import *
 import renderer
 import shader
 

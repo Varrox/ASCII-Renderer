@@ -7,7 +7,7 @@ Also I would like to add tile based rendering
 At the moment the required dependencies are:
 
 ```sh
-pip install colorist
 pip install numpy
 pip install pillow
+pip install pygame
 ```

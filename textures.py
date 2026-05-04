@@ -1,5 +1,5 @@
 from PIL import Image
-from vectors import *
+from pygame.math import Vector2, Vector3
 
 class sampler:
     def __init__(self, image_path:str):
@@ -9,6 +9,6 @@ class sampler:
         img.close()
         self.data = [pixels[i * width:(i + 1) * width] for i in range(height)]
 
-def texture(image:sampler, uv:vec2) -> vec3:
-    x, y, z = image.data[int(wrap(uv.y) * len(image.data))][int(wrap(uv.x) * len(image.data[0]))]
-    return vec3(x, y, z) / 255
+def texture(image:sampler, uv:Vector2) -> Vector3:
+    x, y, z = image.data[int((uv.y % 1.0) * len(image.data))][int((uv.x % 1.0) * len(image.data[0]))]
+    return Vector3(x, y, z) / 255
