@@ -11,6 +11,4 @@ add_executable(ASCII-Renderer ${SOURCES})
 target_include_directories(ASCII-Renderer PRIVATE include/stb)
 target_include_directories(ASCII-Renderer PUBLIC src)
 
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
-endif()
+set(CMAKE_BUILD_TYPE Release)

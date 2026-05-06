@@ -9,10 +9,9 @@ bool running = true;
 int main(){
     ShadertoyShader shader; // ("assets/pumpkin.jpeg")
 
-    Renderer renderer;
+    Renderer renderer(180, 100);
 
-    renderer.height = 100;
-    renderer.width = 180; //(int)(((float)shader.img.width / shader.img.height) * renderer.height);
+    //renderer.width = (int)(((float)shader.img.width / shader.img.height) * renderer.height);
 
     std::ios_base::sync_with_stdio(false);
     std::cin.tie(NULL);
