@@ -1,13 +1,7 @@
-# ASCII-Renderer
+# Terminal-ASCII-Display
 
-A terminal renderer that has shader and texture support. At the moment it is being ran only on the CPU, but I may in the future switch to c or c++ and use opengl / vulkan for pixel rendering.
+A terminal ASCII display that has shader and texture support. At the moment it is being ran only on the CPU, but at some point ill use opengl / vulkan for pixel rendering.  
 
-Also I would like to add tile based rendering
+There is both a C++ and python version of the renderer, and I will only be working on the C++ version from now on.
 
-At the moment the required dependencies are:
-
-```sh
-pip install numpy
-pip install pillow
-pip install pygame
-```
+Also I would like to add tile based rendering to both C++ and python with parallel renderering.
