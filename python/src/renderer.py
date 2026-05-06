@@ -24,9 +24,9 @@ def draw_with_shader(shader:callable):
         y_coord = float(y) / height
         x:int = 0
         while x < width:
-            output += convert_to_ansi(shader(vec2(float(x) / width, y_coord))) + CHAR + RESET
+            output += convert_to_ansi(shader(vec2(float(x) / width, y_coord))) + CHAR
             x += 1
-        output += "\n"
+        output += "\n" + RESET
         y += 1
 
     output += "\033[?2026l"
