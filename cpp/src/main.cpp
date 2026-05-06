@@ -1,6 +1,6 @@
 #include "renderer.h"
 #include "textures.h"
-#include "time_manager.h"
+#include "helpers/time_manager.h"
 
 #include "shaders/shadertoy_example.h"
 

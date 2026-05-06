@@ -2,7 +2,7 @@
 
 #include "shader.h"
 #include "textures.h"
-#include "time_manager.h"
+#include "helpers/time_manager.h"
 
 ///
 /// This shader is an example of a shadertoy shader (or glsl shader) in this ASCII renderer.

@@ -2,7 +2,7 @@
 
 #include "shader.h"
 #include "textures.h"
-#include "time_manager.h"
+#include "helpers/time_manager.h"
 
 class FunnyShader : public Shader {
 public:
